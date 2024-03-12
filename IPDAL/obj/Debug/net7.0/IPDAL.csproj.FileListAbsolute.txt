@@ -1,0 +1,14 @@
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPDAL/obj/Debug/net7.0/IPDAL.csproj.AssemblyReference.cache
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPDAL/obj/Debug/net7.0/IPDAL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPDAL/obj/Debug/net7.0/IPDAL.AssemblyInfoInputs.cache
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPDAL/obj/Debug/net7.0/IPDAL.AssemblyInfo.cs
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPDAL/obj/Debug/net7.0/IPDAL.csproj.CoreCompileInputs.cache
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPDAL/bin/Debug/net7.0/IPDAL.deps.json
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPDAL/bin/Debug/net7.0/IPDAL.runtimeconfig.json
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPDAL/bin/Debug/net7.0/IPDAL.dll
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPDAL/bin/Debug/net7.0/IPDAL.pdb
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPDAL/obj/Debug/net7.0/IPDAL.dll
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPDAL/obj/Debug/net7.0/refint/IPDAL.dll
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPDAL/obj/Debug/net7.0/IPDAL.pdb
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPDAL/obj/Debug/net7.0/IPDAL.genruntimeconfig.cache
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPDAL/obj/Debug/net7.0/ref/IPDAL.dll

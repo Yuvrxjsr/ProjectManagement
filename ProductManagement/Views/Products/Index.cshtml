@@ -1,0 +1,279 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<script type="text/javascript">$(document).ready(function () {
+        loadData();
+    });
+
+    function loadData() {
+        $.ajax({
+            url: "/Products/GetProducts",
+            type: "GET",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                var html = '';
+                $.each(response, function (key, item) {
+                    html += '<tr>';
+                    html += '<td>' + item.productId + '</td>';
+                    html += '<td>' + item.name + '</td>';
+                    html += '<td>' + item.description + '</td>';
+                    html += '<td>' + item.price + '</td>';
+                    html += '<td>' + item.quantity + '</td>';
+                    html += '<td>' + item.category + '</td>';
+                    html += '<td>' + item.supplier + '</td>';
+                    html += '<td><a href="#" onclick="return getProductById(' + item.productId + ')">Edit Product</a> |<a href="#" onClick="Delete(' + item.productId + ')">Delete Product</a></td>';
+                    html += '</tr>';
+                });
+                $('.tbody').html(html);
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
+
+    function Add() {
+        let product = {
+            Name: $('#productName').val(),
+            Description: $('#productDescription').val(),
+            Price: parseInt($('#productPrice').val()),
+            Quantity: parseInt($('#productQuantity').val()),
+            Category: $('#productCategory').val(),
+            Supplier: $('#productSupplier').val()
+        };
+
+        $.ajax({
+            url: "/Products/AddProduct",
+            type: "POST",
+            data: JSON.stringify(product),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response == true) {
+                    loadData();
+                    $('#myModal').modal('hide');
+                    $('.modal-backdrop').remove();
+                } else {
+                    $('#errorMessage').text('Failed to add product.');
+                }
+            },
+            error: function (errormessage) {
+                if (errormessage.status === 401) {
+                    alert('You are not authorized!');
+                } else {
+                    alert(errormessage.responseText);
+                }
+            }
+        });
+    }
+
+
+    function update() {
+        let product = {
+            productId: $('#productId').val(),
+            Name: $('#productName').val(),
+            Description: $('#productDescription').val(),
+            Price: $('#productPrice').val(),
+            Quantity: $('#productQuantity').val(),
+            Category: $('#productCategory').val(),
+            Supplier: $('#productSupplier').val()
+        };
+
+        $.ajax({
+            url: "/Products/UpdateProduct",
+            type: "POST",
+            data: JSON.stringify(product),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                console.log(product)
+                if (response == true) {
+                    loadData();
+                    $('#myModal').modal('hide');
+                    $('.modal-backdrop').remove();
+                }
+                else {
+                    $('#errorMessage').text('unable to update product');
+                }
+            },
+            error: function (errormessage) {
+                if (errormessage.status === 401) {
+                    alert('You are not authorized!');
+                } else {
+                    alert(errormessage.responseText);
+                }
+            }
+
+        });
+    }
+
+
+    function Delete(productId) {
+        var ans = confirm('Are you sure you want to delete this product?');
+        if (ans) {
+            $.ajax({
+                url: "/Products/DeleteProduct/" + productId,
+                type: "POST",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (response) {
+                    loadData();
+                },
+                error: function (errormessage) {
+                    if (errormessage.status == 401) {
+                        alert('You are not authorized!');
+                    }
+                }
+            });
+        }
+    }
+
+    function getProductById(productId) {
+        $.ajax({
+            url: "/Products/GetProductById/" + productId,
+            type: "GET",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                console.log(productId)
+                $('#productId').val(productId);
+                $('#productName').val(response.name);
+                $('#productDescription').val(response.description);
+                $('#productPrice').val(response.price);
+                $('#productQuantity').val(response.quantity);
+                $('#productCategory').val(response.category);
+                $('#productSupplier').val(response.supplier);
+
+                $('#errorMessage').text('');
+                $('#myModal').modal('show');
+                $('#btnUpdate').show();
+                $('#btnAdd').hide();
+            },
+            error: function (errormessage) {
+                if (errormessage.status === 401) {
+                    alert('You are not authorized!');
+                } else {
+                    alert(errormessage.responseText);
+                }
+            }
+        });
+    }
+
+
+    function clearTextBoxes() {
+        $('#productId').val('');
+        $('#productName').val('');
+        $('#productDescription').val('');
+        $('#productPrice').val('');
+        $('#productQuantity').val('');
+        $('#productCategory').val('');
+        $('#productSupplier').val('');
+        $('#btnUpdate').hide();
+        $('#btnAdd').show();
+        $('#errorMessage').text('');
+    }</script>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" onclick="clearTextBoxes();">Add New Product</button>
+@*<p style="color:red" id="errorMessage"></p>*@
+
+<center> <h2>Products</h2></center>
+<br />
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <td>ProductID</td>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Category</td>
+            <td>Supplier</td>
+        </tr>
+    </thead>
+    <tbody class="tbody">
+        @*Trip records will be populated here*@
+    </tbody>
+</table>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Product</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="hidden" id="productId" placeholder="Product ID" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="productName" placeholder="Product Name" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="productDescription" placeholder="Product Description" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="productPrice" placeholder="Product Price" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="productQuantity" placeholder="Product Quantity" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="productCategory" placeholder="Product Category" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="productSupplier" placeholder="Product Supplier" />
+                            </div>
+                        </div>
+                    </div>
+                    <p style="color:red" id="errorMessage"></p>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" id="btnAdd" onclick="return Add();">Add</button>
+                <button type="button" class="btn btn-outline-primary" id="btnUpdate" onclick="return update();">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/bin/Debug/net7.0/IPBLL.deps.json
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/bin/Debug/net7.0/IPBLL.dll
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/bin/Debug/net7.0/IPBLL.pdb
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/bin/Debug/net7.0/IPDAL.dll
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/bin/Debug/net7.0/IPDAL.pdb
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/obj/Debug/net7.0/IPBLL.csproj.AssemblyReference.cache
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/obj/Debug/net7.0/IPBLL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/obj/Debug/net7.0/IPBLL.AssemblyInfoInputs.cache
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/obj/Debug/net7.0/IPBLL.AssemblyInfo.cs
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/obj/Debug/net7.0/IPBLL.csproj.CoreCompileInputs.cache
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/obj/Debug/net7.0/IPBLL.csproj.CopyComplete
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/obj/Debug/net7.0/IPBLL.dll
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/obj/Debug/net7.0/refint/IPBLL.dll
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/obj/Debug/net7.0/IPBLL.pdb
+/Users/yuvrajsinghrandhawa/Projects/ProductManagement/IPBLL/obj/Debug/net7.0/ref/IPBLL.dll

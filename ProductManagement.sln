@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductManagement", "ProductManagement\ProductManagement.csproj", "{7DDD8166-3ABA-4647-910E-05B4F902F0ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPDAL", "IPDAL\IPDAL.csproj", "{9CD37EBC-BF9E-4BB6-AE4D-1CF2170CB7DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPBLL", "IPBLL\IPBLL.csproj", "{B6180DA1-F17C-4A77-93B0-6D3C0CEE7BEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DDD8166-3ABA-4647-910E-05B4F902F0ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DDD8166-3ABA-4647-910E-05B4F902F0ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DDD8166-3ABA-4647-910E-05B4F902F0ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DDD8166-3ABA-4647-910E-05B4F902F0ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CD37EBC-BF9E-4BB6-AE4D-1CF2170CB7DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CD37EBC-BF9E-4BB6-AE4D-1CF2170CB7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CD37EBC-BF9E-4BB6-AE4D-1CF2170CB7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CD37EBC-BF9E-4BB6-AE4D-1CF2170CB7DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6180DA1-F17C-4A77-93B0-6D3C0CEE7BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6180DA1-F17C-4A77-93B0-6D3C0CEE7BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6180DA1-F17C-4A77-93B0-6D3C0CEE7BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6180DA1-F17C-4A77-93B0-6D3C0CEE7BEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB973AFB-B3DE-4350-AAF4-0F71DE139F86}
+	EndGlobalSection
+EndGlobal
